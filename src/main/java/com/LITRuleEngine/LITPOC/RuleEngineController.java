@@ -24,7 +24,7 @@ public class RuleEngineController {
         try {
             return new ResponseEntity<>(dojRuleEngine.runRules(emp), HttpStatus.OK);
         } catch (Exception e) {
-            System.out.println("Hi");
+            System.out.println("Exception Occured");
             return null;
         }
     }
@@ -34,7 +34,7 @@ public class RuleEngineController {
         try {
             return new ResponseEntity<>(cmRatingRuleEngine.runRules(cm), HttpStatus.OK);
         } catch (Exception e) {
-            System.out.println("Error");
+            System.out.println("Exception Occured");
             return null;
         }
     }
