@@ -24,7 +24,7 @@ public class RuleEngineController {
         try {
             return new ResponseEntity<>(dojRuleEngine.runRules(emp), HttpStatus.OK);
         } catch (Exception e) {
-            System.out.println("Exception Occured");
+            System.out.println(e);
             return null;
         }
     }
