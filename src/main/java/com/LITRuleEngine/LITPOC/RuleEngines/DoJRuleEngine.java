@@ -22,7 +22,7 @@ public class DoJRuleEngine {
     public Event runRules(Employee emp) throws Exception {
         KieSession ksession = KsessionGenerator.getKsession("dojRules");
 
-        Event event = new Event(-1, "No course to be assigned");
+        Event event = new Event(emp.getEmpId(), emp.getJobRole(), -1, "No course to be assigned");
         DateKeeper datekeeper = new DateKeeper(new Date(), emp.getDoJ());
 
         ksession.insert(event);

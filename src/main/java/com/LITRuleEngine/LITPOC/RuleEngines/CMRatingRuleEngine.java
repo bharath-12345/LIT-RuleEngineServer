@@ -14,7 +14,7 @@ public class CMRatingRuleEngine {
     public Event runRules(CMRatings cm) throws Exception {
         KieSession ksession = KsessionGenerator.getKsession("cmRatingRules");
 
-        Event event = new Event(-1, "No course to be assigned");
+        Event event = new Event(cm.getEmpId(), "CM", -1, "No course to be assigned");
 
         ksession.insert(event);
         ksession.insert(cm);

@@ -4,14 +4,16 @@ import java.text.SimpleDateFormat;
 import java.util.Date;
 
 public class Employee {
+    private Integer empId;
     private String name;
     private Date DoJ;
     private String jobRole;
 
-    public Employee(String name, String jobRole, String DoJ) throws Exception {
+    public Employee(String DoJ, String name, String jobRole, Integer empId) throws Exception {
         this.name = name;
         this.DoJ = Employee.date(DoJ);
         this.jobRole = jobRole;
+        this.empId = empId;
     }
 
     public String getName() {
@@ -44,12 +46,29 @@ public class Employee {
         return sdf.parse( str );
     }
 
+    public Integer getEmpId() {
+        return empId;
+    }
+
+    public void setEmpId(Integer empId) {
+        this.empId = empId;
+    }
+
+    public String getJobRole() {
+        return jobRole;
+    }
+
+    public void setJobRole(String jobRole) {
+        this.jobRole = jobRole;
+    }
+
     @Override
     public String toString() {
         return "Employee{" +
-                "name='" + name + '\'' +
+                "empId=" + empId +
+                ", name='" + name + '\'' +
                 ", DoJ=" + DoJ +
-                ", jobType='" + jobRole + '\'' +
+                ", jobRole='" + jobRole + '\'' +
                 '}';
     }
 }

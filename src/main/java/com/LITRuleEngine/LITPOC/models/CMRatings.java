@@ -4,21 +4,13 @@ public class CMRatings {
     private String name;
     private Integer rating;
     private String metricName;
+    private Integer empId;
 
-
-    public CMRatings(String name, String metricName, Integer rating) {
+    public CMRatings(String metricName, String name, Integer empId, Integer rating) {
         this.name = name;
         this.rating = rating;
         this.metricName = metricName;
-    }
-
-    @Override
-    public String toString() {
-        return "CMRatings{" +
-                "name='" + name + '\'' +
-                ", rating=" + rating +
-                ", metricName='" + metricName + '\'' +
-                '}';
+        this.empId = empId;
     }
 
     public String getName() {
@@ -43,5 +35,23 @@ public class CMRatings {
 
     public void setMetricName(String metricName) {
         this.metricName = metricName;
+    }
+
+    public Integer getEmpId() {
+        return empId;
+    }
+
+    public void setEmpId(Integer empId) {
+        this.empId = empId;
+    }
+
+    @Override
+    public String toString() {
+        return "CMRatings{" +
+                "name='" + name + '\'' +
+                ", rating=" + rating +
+                ", metricName='" + metricName + '\'' +
+                ", empId=" + empId +
+                '}';
     }
 }
